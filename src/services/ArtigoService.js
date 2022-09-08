@@ -11,8 +11,11 @@ export default {
   },
 
   async incluirTarefas(data) {
-    return await PROJETO.post("novaTarefa/", JSON.stringify(data));
-  }
+    return await PROJETO.post("novaTarefa/", data);
+  },
 
+  async deletarTarefas(id,data) {
+    return await PROJETO.get(`tarefas/${id}`, JSON.stringify(data));
+  },
 
 };
