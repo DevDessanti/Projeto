@@ -14,8 +14,16 @@ export default {
     return await PROJETO.post("novaTarefa/", data);
   },
 
-  async deletarTarefas(id,data) {
-    return await PROJETO.get(`tarefas/${id}`, JSON.stringify(data));
+  async deletarTarefas(id) {
+    return await PROJETO.delete("tarefa/"+ id);
+  },
+
+  async alterarTarefa(id, tarefa, descricao, responsavel) {
+    return await PROJETO.put("atualizar/tarefa/"+ id, {
+      tarefa: tarefa,
+      descricao: descricao,
+      responsavel: responsavel,
+    });
   },
 
 };
